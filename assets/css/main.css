@@ -1,0 +1,146 @@
+/* =================================================================
+   ARQUIVO CSS CENTRAL DO SITE - main.css
+   ================================================================= */
+
+/* --- TEMA E VARIÁVEIS GLOBAIS --- */
+:root {
+    --dark-bg: #121212;
+    --panel-bg: #1e1e1e;
+    --input-bg: #2a2a2a;
+    --border-color: #444;
+    --text-color: #e2e2e2;
+    --text-muted: #8c8c8c;
+    --accent-color: #0dcaf0; /* Ciano */
+    --bs-primary: #0d6efd;   /* Azul Padrão Bootstrap */
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* --- COMPONENTES PADRÃO --- */
+
+.card { background-color: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-color); transition: box-shadow 0.2s ease-in-out; }
+.card:hover { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
+
+/* FORMULÁRIOS */
+.form-label { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
+.form-control,
+.form-select {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--input-bg);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+}
+
+/* BOTÕES */
+.btn-primary { background-color: var(--accent-color); border-color: var(--accent-color); color: #000; font-weight: 600; }
+.btn-primary:hover { filter: brightness(1.1); background-color: var(--accent-color); border-color: var(--accent-color); }
+
+/* TABELAS */
+.table { color: var(--text-muted); }
+.table thead th { color: var(--accent-color); }
+.table-hover tbody tr:hover { background-color: var(--input-bg); color: var(--text-color); }
+.table-responsive { max-height: 65vh; }
+
+/* --- CLASSES DE UTILIDADE --- */
+.loader { border: 5px solid #333; border-radius: 50%; border-top: 5px solid var(--accent-color); width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 20px auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.card-title-custom { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+.card-value { font-size: clamp(1.2rem, 3.5vw, 1.8rem); font-weight: 700; color: var(--accent-color); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chart-container { min-height: 350px; }
+
+@media (max-width: 1400px) { .card-value { font-size: 1.5rem; } }
+@media (max-width: 992px) { .card-value { font-size: 1.7rem; } }
+@media (max-width: 576px) { .card-value { font-size: 1.5rem; } }
+
+
+/* --- TEMA PARA A BIBLIOTECA CHOICES.JS (ATUALIZADO) --- */
+.choices__inner {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 8px; /* <-- AJUSTADO para 8px */
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; /* <-- ADICIONADO transição suave */
+    padding: 0.2rem 0.75rem; /* Ajuste fino de altura */
+    min-height: auto;
+}
+.choices.is-focused .choices__inner {
+    border-color: var(--accent-color); /* <-- ADICIONADO borda de foco */
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25); /* <-- ADICIONADO sombra de foco */
+}
+.choices__list--dropdown { background-color: var(--input-bg); border: 1px solid var(--border-color); z-index: 1050; }
+.choices__list--dropdown .choices__item { color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.choices__list--dropdown .choices__item--choice.is-highlighted { background-color: var(--bs-primary); color: white; }
+.choices__input { background-color: transparent; color: var(--text-color); }
+.choices__list--single .choices__item { color: var(--text-color); }
+.choices__list::-webkit-scrollbar { width: 8px; }
+.choices__list::-webkit-scrollbar-track { background: var(--input-bg); }
+.choices__list::-webkit-scrollbar-thumb { background: #555; border-radius: 4px; }
+.choices__list::-webkit-scrollbar-thumb:hover { background: #777; }
+
+html {
+    font-size: 13px !important;
+}
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1320px; /* O padrão do Bootstrap é 1140px. Aumentamos um pouco. */
+    }
+}
+.daterangepicker {
+    background-color: #343a40 !important;
+    border-color: #495057 !important;
+}
+.daterangepicker .ranges li {
+    background-color: #495057;
+    border: 1px solid #495057;
+    color: #dee2e6;
+}
+.daterangepicker .ranges li:hover {
+    background-color: #6c757d;
+}
+.daterangepicker .ranges li.active {
+    background-color: #0d6efd;
+    color: white;
+}
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+    color: #dee2e6;
+}
+.daterangepicker .calendar-table .month {
+    color: white;
+}
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
+    background-color: #343a40;
+    border-color: transparent;
+    color: #6c757d;
+}
+.daterangepicker td.available:hover, .daterangepicker th.available:hover {
+    background-color: #495057;
+}
+.daterangepicker td.in-range {
+    background-color: rgba(13, 110, 253, 0.2);
+}
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #0d6efd;
+}
+.daterangepicker .drp-buttons .btn {
+    border: 1px solid #6c757d;
+}
+.daterangepicker .drp-buttons .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+.daterangepicker:after, .daterangepicker:before {
+    display: none; /* Simplifica a aparência da seta */
+}

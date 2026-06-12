@@ -1,0 +1,15 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/plani555/sathcon.sathgold.com.br/
+    - /bin/mkdir -p $DEPLOYPATH/assets
+    - /bin/mkdir -p $DEPLOYPATH/includes
+    - /bin/mkdir -p $DEPLOYPATH/pages
+    - /bin/mkdir -p $DEPLOYPATH/public
+    - /bin/cp -R assets/. $DEPLOYPATH/assets/
+    - /bin/cp -R includes/. $DEPLOYPATH/includes/
+    - /bin/rm -f $DEPLOYPATH/includes/config.example.php
+    - /bin/cp -R pages/. $DEPLOYPATH/pages/
+    - /bin/cp -R public/. $DEPLOYPATH/public/
+    - /bin/cp .htaccess $DEPLOYPATH/
+    - /bin/cp *.php $DEPLOYPATH/

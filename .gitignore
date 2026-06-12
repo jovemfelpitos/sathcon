@@ -1,0 +1,19 @@
+# Runtime/local files
+/cache/
+/uploads/
+/error_log
+/vendor/
+*.log
+*.zip
+
+# Secrets and environment-specific config
+/credenciais/
+/includes/config.php
+.env
+.env.*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

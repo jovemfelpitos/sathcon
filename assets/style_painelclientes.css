@@ -1,0 +1,16 @@
+body{
+    margin:0;
+}
+
+
+
+#cardsResumo .row {
+  display: flex;
+  justify-content: center;  /* centraliza horizontal */
+  flex-wrap: wrap;          /* permite quebrar linha */
+  gap: 1rem;                /* espaçamento entre os cards */
+}
+#cardsResumo .card {
+  text-align: center;       /* centraliza o conteúdo dentro do card */
+  min-width: 140px;         /* evita ficar muito pequeno em telas pequenas */
+}

@@ -1,0 +1,353 @@
+
+/* ==================== ESPAÇAMENTO CONTEÚDO ==================== */
+/* Afasta todo o conteúdo da página do topo/nav */
+main {
+    background-color: #0b151d;
+    padding: 0;
+}
+
+/* ==================== RESET / BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: #0b151d;
+}
+
+/* ==================== STICKY TOPBAR / FILTROS ==================== */
+
+
+.sticky-topbar .form-label {
+    color: #ccc; /* labels claras */
+    font-size: 0.9rem;
+}
+
+
+.sticky-topbar input,
+.sticky-topbar select {
+    background-color: #1a282e; /* inputs escuros */
+    border: 1px solid #333;
+    color: #fff;
+}
+
+.sticky-topbar input::placeholder {
+    color: #888; /* placeholder mais claro */
+}
+
+.sticky-topbar button {
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.sticky-topbar button:hover {
+    opacity: 0.9;
+}
+
+/* ==================== CARDS ==================== */
+
+.resumo-card .card-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.resumo-card .card-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.resumo-card {
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+.resumo-card:hover {
+  transform: translateY(-5px);
+}
+.resumo-card {
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+.resumo-card:hover {
+  transform: translateY(-5px);
+}
+.resumo-card h3, .resumo-card h4 {
+  font-size: 1.6rem;
+}
+.resumo-card small {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: block;
+}
+
+/* ==================== CHART WRAPPERS ==================== */
+.chart-wrapper {
+    display: none;
+    background-color: #1a282e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.chart-wrapper.active {
+    display: block;
+}
+
+/* ==================== BOTÕES ==================== */
+.btn {
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn.btn-p {
+    background-color: #01bdc5;
+    border: none;
+    color: #fff;
+}
+
+.btn.btn-s {
+    background-color: #0c76af;
+    border: none;
+    color: #fff;
+}
+
+.btn.btn-p:hover {
+    background-color: #019ba1;
+    color: #fff;
+}
+
+.btn.btn-s:hover {
+    background-color: #095d87;
+    color: #fff;
+}
+
+.btn.btn-p:active,
+.btn.btn-p:focus {
+    background-color: #019ba1 !important; /* mesma cor do hover */
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+.btn.btn-s:active,
+.btn.btn-s:focus {
+    background-color: #095d87 !important; /* mesma cor do hover */
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    background-color: #36a2eb;
+    border: none;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1e5799;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.btn-outline-secondary {
+    border: 1px solid #444;
+    color: #ccc;
+    background: transparent;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #333;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    background: #1a282e !important;
+    padding: 15px;
+    border-top: 1px solid #3f3f46;
+}
+
+footer a {
+    color: #10a37f;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== GRÁFICOS ==================== */
+canvas {
+    max-height: 400px;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+    .sticky-topbar .row {
+        flex-direction: column;
+    }
+    .sticky-topbar .col-md-4,
+    .sticky-topbar .col-md-3,
+    .sticky-topbar .col-md-2 {
+        width: 100%;
+    }
+    .sticky-topbar button {
+        width: 100%;
+    }
+}
+
+html, body {
+  background-color: #0b151d !important;
+}
+
+.container {
+  background-color: transparent !important;
+}
+
+.resumo-card {
+  background-color: #1a282e !important;
+}
+
+#filtroConsultor {
+  appearance: none;       /* remove estilo nativo */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #29373e;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 6px;
+  border-radius: 0.375rem !important;
+}
+#filtroConsultor option {
+  background-color: #28393f;
+  color: white;
+}
+
+/* Fundo do calendário */
+.daterangepicker {
+  background-color: #29373e !important;
+  border: 1px solid #0c76af; /* opcional: borda */
+  color: #fff; /* cor da fonte */
+}
+
+/* Fundo das listas de ranges (Hoje, Ontem, etc) */
+.daterangepicker .ranges li {
+  background-color: #29373e !important;
+  color: #fff !important;
+}
+
+/* Hover nos ranges */
+.daterangepicker .ranges li:hover {
+  background-color: #0c76af !important;
+  color: #fff !important;
+}
+
+/* Campo do calendário em si */
+.daterangepicker .calendar-table {
+  background-color: #29373e !important;
+  color: #fff !important;
+  border: 1px solid #444;
+}
+
+/* Dias do calendário */
+.daterangepicker td.available {
+  background-color: #29373e !important;
+  color: #fff !important;
+}
+.daterangepicker td.available:hover {
+  background-color: #0c76af !important;
+  color: #fff !important;
+}
+
+/* Remove a borda branca */
+.input-group .form-control,
+.input-group .input-group-text {
+  border: 1px solid #444;
+  box-shadow: none !important;
+}
+
+/* Quadrado do ícone */
+.input-group .input-group-text {
+  background-color: #374855 !important;
+  color: #fff !important; /* cor do ícone */
+}
+
+/* Campo de input */
+.input-group .form-control {
+  background-color: #28393f !important;
+  color: #fff !important; /* cor do texto */
+}
+
+/* Placeholder */
+.input-group .form-control::placeholder {
+  color: #aaa !important; 
+}
+
+/* Botão Limpar */
+#btnLimpar {
+  background-color: #29373e !important;
+  border: 1px solid #444;
+  color: #fff !important;
+}
+
+#btnLimpar:hover {
+  background-color: #29373e !important; /* cor um pouco mais clara no hover */
+  color: #fff !important;
+}
+
+#btnLimpar:active,
+#btnLimpar:focus {
+  background-color: #28393f !important; /* cor mais escura no clique */
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+#filtroParcela {
+  background-color: #28393f !important;
+  color: #fff !important;
+  border-color: #29373e !important;
+}
+
+/* Fundo do dropdown */
+.select2-container .select2-results__option {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+/* Hover */
+.select2-container .select2-results__option--highlighted {
+  background-color: #29373e !important;
+  color: #fff !important;
+}
+
+/* Caixa selecionada */
+.select2-container--default .select2-selection--single {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+/* Placeholder */
+.select2-container--default .select2-selection__placeholder {
+  color: #aaa;
+}
